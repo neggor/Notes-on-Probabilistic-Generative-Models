@@ -22,21 +22,21 @@ LATENT_DIM = 50
 
 def data_loader():
 
-    train_data = np.load("Data/weird_dataset.npy")
+    train_data = np.load("Data/weird_dataset_train.npy")
     train_data = tf.data.Dataset.from_tensor_slices(train_data)
     train_data = train_data.map(lambda x: x/255)
     train_data = train_data.map(lambda x: (x, x))
 
     train_data = train_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
 
-    val_data = np.load("/Data/weird_dataset_val.npy")
+    val_data = np.load("Data/weird_dataset_val.npy")
     val_data = tf.data.Dataset.from_tensor_slices(val_data)
     val_data = val_data.map(lambda x: x/255)
     val_data = val_data.map(lambda x: (x, x))
 
     val_data = val_data.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
 
-    test_data = np.load("/Data/weird_dataset_test.npy")
+    test_data = np.load("Data/weird_dataset_test.npy")
     test_data = tf.data.Dataset.from_tensor_slices(test_data)
     test_data = test_data.map(lambda x: x/255)
     test_data = test_data.map(lambda x: (x, x))
@@ -154,7 +154,7 @@ def main():
                         callbacks=[callback])
 
     vae.save_weights('Model/Vae_weights.h5')
-
+    print('Model saveed!')
 
     plt.plot(history.history['loss'], label = 'loss')
     plt.plot(history.history['val_loss'], label = 'val_loss')

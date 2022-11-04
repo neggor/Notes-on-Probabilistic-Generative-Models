@@ -119,7 +119,7 @@ def get_densities(transformed_distribution):
 
     return Z.squeeze()
 
-def get_image_array_from_density_values(Z, heatmap, size= 0.5):
+def get_image_array_from_density_values(Z, heatmap, size= 0.36):
     """
     This function takes a numpy array Z of density values of shape (100, 100)
     and returns an integer numpy array of shape (36, 36, 3) of pixel values for an image.
@@ -160,13 +160,13 @@ def generate_data(n_train, n_val, n_test):
 
     my_images = np.array(my_images)
 
-    np.save('/Data/weird_dataset_train.npy', my_images[:n_train])
-    np.save('/Data/weird_dataset_val.npy', my_images[n_train:n_train + n_val])
-    np.save('/Data/weird_dataset_test.npy', my_images[n_train + n_val:])
+    np.save('Data/weird_dataset_train.npy', my_images[:n_train])
+    np.save('Data/weird_dataset_val.npy', my_images[n_train:n_train + n_val])
+    np.save('Data/weird_dataset_test.npy', my_images[n_train + n_val:])
 
 
 def main():
-    generate_data(n_train = 10**4, n_val = 10**3, n_test = 10**2)
+    generate_data(n_train = 10**3, n_val = 10**2, n_test = 10**2)
 
 
 if __name__ == "__main__":
