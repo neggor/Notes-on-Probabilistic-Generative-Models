@@ -7,6 +7,9 @@ For now, only VAE is implemented:
   TODO -> Theoretical explanation of VAE
        -> Article following the code
        
- https://github.com/neggor/Notes-on-Probabilistic-Generative-Models/blob/main/Outputs/interpoplation_18:33:16.mp4
-
+ 
        
+
+https://user-images.githubusercontent.com/48349260/200043676-e4772374-f3c6-4f75-a1f6-07753033eb5b.mp4
+
+
